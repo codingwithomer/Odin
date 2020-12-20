@@ -1,0 +1,12 @@
+D:\Software Development\O\Odin\Odin.Core\bin\Debug\net5.0\Odin.Core.deps.json
+D:\Software Development\O\Odin\Odin.Core\bin\Debug\net5.0\Odin.Core.dll
+D:\Software Development\O\Odin\Odin.Core\bin\Debug\net5.0\ref\Odin.Core.dll
+D:\Software Development\O\Odin\Odin.Core\bin\Debug\net5.0\Odin.Core.pdb
+D:\Software Development\O\Odin\Odin.Core\obj\Debug\net5.0\Odin.Core.csprojAssemblyReference.cache
+D:\Software Development\O\Odin\Odin.Core\obj\Debug\net5.0\Odin.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Software Development\O\Odin\Odin.Core\obj\Debug\net5.0\Odin.Core.AssemblyInfoInputs.cache
+D:\Software Development\O\Odin\Odin.Core\obj\Debug\net5.0\Odin.Core.AssemblyInfo.cs
+D:\Software Development\O\Odin\Odin.Core\obj\Debug\net5.0\Odin.Core.csproj.CoreCompileInputs.cache
+D:\Software Development\O\Odin\Odin.Core\obj\Debug\net5.0\Odin.Core.dll
+D:\Software Development\O\Odin\Odin.Core\obj\Debug\net5.0\ref\Odin.Core.dll
+D:\Software Development\O\Odin\Odin.Core\obj\Debug\net5.0\Odin.Core.pdb
