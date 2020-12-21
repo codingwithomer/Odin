@@ -1,13 +1,19 @@
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Odin.Common.Constants;
 using Odin.DataAccess.Context;
 using Odin.WebApi.Extensions;
+using Odin.WebApi.Filters;
+using System.Globalization;
 
 namespace Odin.WebApi
 {
@@ -22,10 +28,31 @@ namespace Odin.WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddMvcCore(option =>
+            {
+                option.Filters.Add(new ExceptionHandlerFilter());
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(HeaderInformation.CorsPolicy, builder =>
+                  builder.AllowAnyOrigin()
+                         .AllowAnyMethod()
+                         .AllowAnyHeader());
+            });
+
             services.AddHealthChecks();
 
             services.AddControllers()
-                    .AddFluentValidation(x => x.RunDefaultMvcValidationAfterFluentValidationExecutes = false);
+                    .AddFluentValidation(x => x.RunDefaultMvcValidationAfterFluentValidationExecutes = false)
+                    .AddNewtonsoftJson(option =>
+                    {
+                        option.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                        option.SerializerSettings.Culture = new CultureInfo("tr-TR");
+                        option.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
+                    });
 
             services.AddDbContext<OdinDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("OdinDbContext")));
 
@@ -46,6 +73,8 @@ namespace Odin.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Odin.WebApi v1"));
             }
+
+            app.UseCors(HeaderInformation.CorsPolicy);
 
             app.UseCustomHealthCheck();
 

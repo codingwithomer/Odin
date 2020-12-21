@@ -7,7 +7,7 @@ namespace Odin.BLL.Services
     {
         CustomerDTO GetCustomerById(int id);
         IEnumerable<CustomerDTO> GetCustomers();
-        void CreateProduct(CustomerDTO customerDTO);
+        void CreateCustomer(CustomerDTO customerDTO);
         void Delete(int id);
         void Update(CustomerDTO customerDTO);
     }

@@ -22,7 +22,7 @@ namespace Odin.BLL.Managers
             _customerRepository = customerRepository;
         }
 
-        public void CreateProduct(CustomerDTO customerDTO)
+        public void CreateCustomer(CustomerDTO customerDTO)
         {
             var customer = _mapper.Map<Customer>(customerDTO);
 

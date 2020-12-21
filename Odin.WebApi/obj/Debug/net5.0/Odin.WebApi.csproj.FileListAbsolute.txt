@@ -76,3 +76,7 @@ D:\Software Development\O\Odin\Odin.WebApi\obj\Debug\net5.0\Odin.WebApi.pdb
 D:\Software Development\O\Odin\Odin.WebApi\obj\Debug\net5.0\Odin.WebApi.genruntimeconfig.cache
 D:\Software Development\O\Odin\Odin.WebApi\bin\Debug\net5.0\Odin.Common.dll
 D:\Software Development\O\Odin\Odin.WebApi\bin\Debug\net5.0\Odin.Common.pdb
+D:\Software Development\O\Odin\Odin.WebApi\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Software Development\O\Odin\Odin.WebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Software Development\O\Odin\Odin.WebApi\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Software Development\O\Odin\Odin.WebApi\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

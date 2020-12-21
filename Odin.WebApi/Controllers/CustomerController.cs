@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Odin.BLL.Services;
-using System;
+using Odin.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Odin.WebApi.Controllers
 {
@@ -12,41 +10,40 @@ namespace Odin.WebApi.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerService _customerService;
+
         public CustomerController(ICustomerService customerService)
         {
             _customerService = customerService;
         }
 
-        // GET: api/<CustomerController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<CustomerDTO> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _customerService.GetCustomers();
         }
 
-        // GET api/<CustomerController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public CustomerDTO Get(int id)
         {
-            return "value";
+            return _customerService.GetCustomerById(id);
         }
 
-        // POST api/<CustomerController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] CustomerDTO customerDTO)
         {
+            _customerService.CreateCustomer(customerDTO);
         }
 
-        // PUT api/<CustomerController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(CustomerDTO customerDTO)
         {
+            _customerService.Update(customerDTO);
         }
 
-        // DELETE api/<CustomerController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _customerService.Delete(id);
         }
     }
 }

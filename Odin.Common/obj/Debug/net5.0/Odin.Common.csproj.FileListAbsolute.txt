@@ -9,3 +9,4 @@ D:\Software Development\O\Odin\Odin.Common\obj\Debug\net5.0\Odin.Common.csproj.C
 D:\Software Development\O\Odin\Odin.Common\obj\Debug\net5.0\Odin.Common.dll
 D:\Software Development\O\Odin\Odin.Common\obj\Debug\net5.0\ref\Odin.Common.dll
 D:\Software Development\O\Odin\Odin.Common\obj\Debug\net5.0\Odin.Common.pdb
+D:\Software Development\O\Odin\Odin.Common\obj\Debug\net5.0\Odin.Common.csprojAssemblyReference.cache
